@@ -52,3 +52,11 @@ python3 -minclearn --options options/S2IL/S2IL_cnn_cifar100.yaml options/data/ci
     --data-path <PATH/TO/DATA> --log-file S2IL_cnn_cifar100_INC10_CPCMR.txt \
     --ssim-p 0.1 --ssim-q 8.0  --ssim-r 8.0 --hint-replace-prob 0.1 --calc-hint --save-model task
 ```
+
+#### 4. Results
+The results are saved in the specified log files, and detailed class-wise results can be found in the results folder, which is generated when the code is run.
+
+
+## Acknowledgements
+
+This repository is developed based on [PODNet](https://github.com/arthurdouillard/incremental_learning.pytorch)
