@@ -20,7 +20,7 @@ class S2IL(ICarl):
         self._class_means = []
         
         self._cka_loss_list = []
-        self._alpha, self._beta, self._gamma = args["alpha"], args["beta"], args["gamma"]
+        self._p, self._q, self._r = args["ssim_p"], args["ssim_q"], args["ssim_r"]
 
         #--------------------------------------------------------------
 
@@ -328,9 +328,9 @@ class S2IL(ICarl):
         # --------------------
         
         ssim_val = torch.tensor(0.,requires_grad = True, device = self._device)
-        alpha = self._alpha
-        beta = self._beta
-        gamma = self._gamma
+        p = self._p
+        q = self._q
+        r = self._r
         factor = self._feature_distil["scheduled_factor"] * math.sqrt(
                         self._n_classes / self._task_size
                     ) 
@@ -344,7 +344,7 @@ class S2IL(ICarl):
                     term2_result = self.Term2_func(old_features, features)
                     term3_result = self.Term3_func(old_features, features)
                     
-                    temp = (term1_result ** alpha ) * (term2_result ** beta) * (term3_result ** gamma)
+                    temp = (term1_result ** p) * (term2_result ** q) * (term3_result ** r)
                     ssim_val = ssim_val + temp
                 loss += factor * (1. - ssim_val) / 2
                 self._metrics["ssim_loss"] += factor * (1. - ssim_val.item()) / 2        

@@ -21,15 +21,6 @@ logger = logging.getLogger(__name__)
 
 
 class ICarl(IncrementalLearner):
-    """Implementation of iCarl.
-
-    # References:
-    - iCaRL: Incremental Classifier and Representation Learning
-      Sylvestre-Alvise Rebuffi, Alexander Kolesnikov, Georg Sperl, Christoph H. Lampert
-      https://arxiv.org/abs/1611.07725
-
-    :param args: An argparse parsed arguments object.
-    """
 
     def __init__(self, args):
         super().__init__()
@@ -151,10 +142,6 @@ class ICarl(IncrementalLearner):
     def epoch_metrics(self):
         return dict(self._epoch_metrics)
 
-    # ----------
-    # Public API
-    # ----------
-
     def _before_task(self, train_loader, val_loader):
         self._n_classes += self._task_size
         self._network.add_classes(self._task_size)
@@ -186,9 +173,6 @@ class ICarl(IncrementalLearner):
         self._training_step(train_loader, val_loader, 0, self._n_epochs)
 
     def _training_step(self, train_loader, val_loader, initial_epoch, nb_epochs, record_bn=True, clipper=None):
-        
-        #print(f"Clipping gradients between -10. and 10.")
-        # logger.info(f"Clipping gradients between -10. and 10.")
         
         best_epoch, best_acc = -1, -1.
         wait = 0
@@ -312,10 +296,6 @@ class ICarl(IncrementalLearner):
             outputs["gradcam_activations"] = gradcam_act
 
         loss = self._compute_loss(inputs, outputs, targets, onehot_targets, memory_flags)
-
-        # if not utils.check_loss(loss):
-        #    raise ValueError("A loss is NaN: {}".format(self._metrics))
-
         self._metrics["loss"] += loss.item()
 
         return loss
@@ -348,10 +328,6 @@ class ICarl(IncrementalLearner):
         ypreds, ytrue = self.compute_accuracy(self._network, data_loader, self._class_means)
 
         return ypreds, ytrue
-
-    # -----------
-    # Private API
-    # -----------
 
     def _compute_loss(self, inputs, outputs, targets, onehot_targets, memory_flags):
         logits = outputs["logits"]

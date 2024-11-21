@@ -8,8 +8,6 @@ class GradualWarmupScheduler(_LRScheduler):
     """ Gradually warm-up(increasing) learning rate in optimizer.
     Proposed in 'Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour'.
 
-    From: https://github.com/ildoonet/pytorch-gradual-warmup-lr.
-
     Args:
         optimizer (Optimizer): Wrapped optimizer.
         multiplier: target learning rate = base lr * multiplier
@@ -77,10 +75,6 @@ class GradualWarmupScheduler(_LRScheduler):
 class CosineWithRestarts(_LRScheduler):  # pylint: disable=protected-access
     """
     Cosine annealing with restarts.
-
-    This is decribed in the paper https://arxiv.org/abs/1608.03983.
-
-    Taken from: https://github.com/allenai/allennlp
 
     Parameters
     ----------

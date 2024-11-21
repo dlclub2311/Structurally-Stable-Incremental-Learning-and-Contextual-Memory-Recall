@@ -221,11 +221,6 @@ def forgetting(accuracies):
 
 def forward_transfer(accuracies):
     """Measures the influence that learning a task has on the performance of future tasks.
-
-    References:
-        * Don't forget, there is more than forgetting: new metrics for Continual Learning
-          Diaz et al.
-          NeurIPS Workshop 2018
     """
     nb_tasks = len(accuracies)
 

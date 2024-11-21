@@ -96,9 +96,9 @@ def get_parser():
     parser.add_argument("--log-file", default="log-file", type=str,
                         help="Name of log file")
                         
-    parser.add_argument("--alpha", default=0.1, type=float, help = "Alpha Value in SSIM")
-    parser.add_argument("--beta", default=8.0, type=float, help = "Beta Value in SSIM")
-    parser.add_argument("--gamma", default=8.0, type=float, help = " Gamma Value in SSIM")
+    parser.add_argument("--ssim-p", default=0.1, type=float, help = "p Value in SSIM")
+    parser.add_argument("--ssim-q", default=8.0, type=float, help = "q Value in SSIM")
+    parser.add_argument("--ssim-r", default=8.0, type=float, help = "r Value in SSIM")
     parser.add_argument("--calc-hint", action="store_true", default=False)
     
     parser.add_argument("--base-model-path", type=str,

@@ -124,10 +124,6 @@ class Classifier(nn.Module):
 
     def align_weights(self):
         """Align new weights based on old weights norm.
-
-        # Reference:
-            * Maintaining Discrimination and Fairness in Class Incremental Learning
-              Zhao et al. 2019
         """
         with torch.no_grad():
             old_weights = torch.cat([w for w in self.old_weights])
@@ -388,10 +384,6 @@ class CosineClassifier(nn.Module):
 
     def align_weights(self):
         """Align new weights based on old weights norm.
-
-        # Reference:
-            * Maintaining Discrimination and Fairness in Class Incremental Learning
-              Zhao et al. 2019
         """
         if len(self._weights) == 1:
             return
@@ -415,10 +407,6 @@ class CosineClassifier(nn.Module):
 
     def align_inv_weights(self):
         """Align new weights based on old weights norm.
-
-        # Reference:
-            * Maintaining Discrimination and Fairness in Class Incremental Learning
-              Zhao et al. 2019
         """
         with torch.no_grad():
             old_weights = torch.cat([w for w in self.old_weights])

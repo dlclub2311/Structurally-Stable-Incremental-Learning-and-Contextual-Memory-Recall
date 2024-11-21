@@ -1,7 +1,3 @@
-"""Pytorch port of the resnet used for CIFAR100 by iCaRL.
-
-https://github.com/srebuffi/iCaRL/blob/master/iCaRL-TheanoLasagne/utils_cifar100.py
-"""
 import logging
 
 import torch
@@ -186,7 +182,6 @@ class Channel_Importance_Measure(nn.Module):
 class CifarResNet(nn.Module):
     """
     ResNet optimized for the Cifar Dataset, as specified in
-    https://arxiv.org/abs/1512.03385.pdf
     """
 
     def __init__(

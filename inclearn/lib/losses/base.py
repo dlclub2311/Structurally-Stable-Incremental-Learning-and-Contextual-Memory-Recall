@@ -13,15 +13,6 @@ def nca(
     memory_flags=None,
 ):
     """Compute AMS cross-entropy loss.
-
-    Reference:
-        * Goldberger et al.
-          Neighbourhood components analysis.
-          NeuriPS 2005.
-        * Feng Wang et al.
-          Additive Margin Softmax for Face Verification.
-          Signal Processing Letters 2018.
-
     :param similarities: Result of cosine similarities between weights and features.
     :param targets: Sparse targets.
     :param scale: Multiplicative factor, can be learned.

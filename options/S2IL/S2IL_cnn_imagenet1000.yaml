@@ -6,7 +6,7 @@ convnet: resnet18
 convnet_config:
   nf: 64
 
-batch_size: 128
+batch_size: 64
 memory_size: 20000
 
 eval_type: cnn
