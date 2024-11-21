@@ -7,10 +7,10 @@ conda env create --file environment.yaml && conda activate s2il
 
 ```
 
-#### 2. Code Dependencies
+#### 2. Data Setup
 
 1. Cifar-100 dataset is automatically downloaded by the code and the required data setup is done by the code.
-2. ImageNet-100 and Imagenet-1K datasets have to be downloaded and organized according to the paths given in the respective files in *imagenet_split* folder
+2. ImageNet-100 and Imagenet-1K datasets have to be downloaded and organized according to the paths given in the respective files in *imagenet_split* folder.
 
 #### 3. Experiments
 To reproduce the results presented in Table1 for the **INC10** setting on **CIFAR-100** with three different class orders:
