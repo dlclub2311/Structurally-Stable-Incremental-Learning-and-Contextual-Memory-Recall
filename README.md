@@ -54,9 +54,9 @@ python3 -minclearn --options options/S2IL/S2IL_cnn_cifar100.yaml options/data/ci
 ```
 
 #### 4. Results
-The results are saved in the specified log files, and detailed class-wise results can be found in the results folder, which is generated when the code is run.
+The results are saved in the specified log files(see the --log-file option), and detailed class-wise results can be found in the results folder, which is generated when the code is run.
 
 
 ## Acknowledgements
 
-This repository is developed based on [PODNet](https://github.com/arthurdouillard/incremental_learning.pytorch)
+This repository is developed based on [PODNet](https://github.com/arthurdouillard/incremental_learning.pytorch).
